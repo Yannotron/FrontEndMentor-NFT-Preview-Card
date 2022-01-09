@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --main-bg : hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line-color: hsl(215, 32%, 27%);
+
+    --text-color: hsl(215, 51%, 70%);
+    --token-color: hsl(178, 100%, 50%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+    background-color: var(--main-bg);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--card-bg);
+    width: 325px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.card_img img{
+    border-radius: 10px;
+}
+
+.card_img {
+    position: relative;
+    padding:0;
+    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+svg {
+    width: 0; 
+    height: 0; 
+    overflow: hidden;
+}
+
+.card_img:hover{
+    filter: url(#filter);
+    cursor: pointer;
+    z-index:1;
+}
+
+.card_img:hover:after {
+    content: url('./images/icon-view.svg');
+    z-index: 2;
+    position:absolute;
+  }
+
+.card_content {
+    padding-top: 1rem;
+}
+
+.card_content h1{
+    color: #fff;
+    font-size: 1.25rem;;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.card_content h1:hover {
+    color: var(--token-color);
+    cursor: pointer;
+}
+
+.card_content p {
+    color: var(--text-color);
+}
+
+.card_data {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.card_data-eth{
+    display: flex;
+    align-items: center;
+    color: var(--token-color);
+}
+
+.card_data-timer{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.card_data img {
+    display: inline-block;
+    padding-right: 7px;
+}
+
+.card_author {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 0 0;
+}
+
+.card_author img {
+    height: 2rem;
+    border: 1px solid #fff;
+    border-radius:50%;
+    margin-right: 0.81rem;
+}
+
+.card_author p {
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+.card_author a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.card_author a:hover {
+    color: var(--token-color);
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div class="card_img">
+          <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <filter id="filter" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="1 0 0 0 0
+                        1 0 0 0 0
+                        1 0 0 0 0
+                        0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+                <feComponentTransfer in="colormatrix" result="componentTransfer">
+                    <feFuncR type="table" tableValues="0 1"/>
+                  <feFuncG type="table" tableValues="1 1"/>
+                  <feFuncB type="table" tableValues="0.97 1"/>
+                  <feFuncA type="table" tableValues="0 0.5"/>
+                </feComponentTransfer>
+                <feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+              </filter>
+            </defs>
+          </svg>
+          <img src="./images/image-equilibrium.jpg" alt="">
+      </div>
+      <div class="card_content">
+        <h1> Equilibrium #3429</h1>
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+      </div>
+      <div class="card_data">
+        <div class="card_data-eth">
+          <img src="./images/icon-ethereum.svg" alt=""> 0.041 ETH
+        </div>
+        <div class="card_data-timer">
+          <img src="./images/icon-clock.svg" alt=""> 3 days left</div>
+      </div>
+      <div class="card_author">
+        <div>
+          <img src="./images/image-avatar.png" alt="">
+        </div>
+        <p> Creation of <a href="">Jules Wyvern</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Yann Hamonou</a>.
+  </div>
+</body>
+</html>
